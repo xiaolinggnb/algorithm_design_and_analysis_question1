@@ -3,7 +3,7 @@
 #include<iostream>
 using namespace std;
 int main() {
-	ifstream infile("ÓÃÀýÊäÈë (1).txt", ios::in);
+	ifstream infile("ç”¨ä¾‹è¾“å…¥ (1).txt");
 	int number;
 	infile >> number;
 	queue<int>que_original;
