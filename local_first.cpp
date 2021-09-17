@@ -6,7 +6,7 @@
 using namespace std;
 int main() {
 	//读取输入，获得输入总数，并生成包含所有输入数据的队列
-	ifstream infile("用例输入 (1).txt");
+	ifstream infile("problem.txt");
 	int number;
 	infile >> number;
 	queue<int>que_original;
@@ -37,6 +37,7 @@ int main() {
 			while(front != que_dynamic.front()){
 				que_dynamic.pop();
 			}
+			que_dynamic.pop();
 			que_dynamic.push(front);
 			//重新生成vec_dynamic
 			que_backup = que_dynamic;
@@ -45,13 +46,12 @@ int main() {
 				int temp = que_dynamic.front();que_dynamic.pop();
 				vec_dynamic.push_back(temp);
 			}
-			sort(vec_dynamic.begin(),vec_dynamic.end());
 			que_dynamic = que_backup;
 		}
 		else{
 			que_dynamic.push(front); vec_dynamic.push_back(front);
-			sort(vec_dynamic.begin(),vec_dynamic.end());
 		}
+		sort(vec_dynamic.begin(),vec_dynamic.end());
 		//
 		if (answer < que_dynamic.size()) answer = que_dynamic.size();
 		//
@@ -60,6 +60,6 @@ int main() {
 	//
 	
 	//结果整理输出
-	cout << answer -1;
+	cout << answer;
 	//
 }
