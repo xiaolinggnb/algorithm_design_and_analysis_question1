@@ -35,6 +35,7 @@ int main() {
 			while(front != que_dynamic.front()){
 				que_dynamic.pop();
 			}
+			que_dynamic.pop();	//this step to pop the repeated number.
 			que_dynamic.push(front);
 			//重新生成vec_dynamic
 			que_backup = que_dynamic;
@@ -58,6 +59,6 @@ int main() {
 	//
 	
 	//结果整理输出
-	cout << answer -1;
+	cout << answer;
 	//
 }
